@@ -1,3 +1,13 @@
+/*
+ * AI-assisted: GitHub Copilot
+ * Tool: GitHub Copilot
+ * Date: 2025-11-26
+ * Summary of assistance: Generated initial implementation of card click handlers, lightbox modal behavior, and keyboard support.
+ * Prompts / notes (short): "How to add click handlers to open achievement lightbox and open project links in new tab. How to add keyboard support and Escape to close."
+ * Human review: Reviewed, adjusted, and edited by the repository owner (Alyssa Nicole Argoncillo); tested in browser.
+ */
+
+
 const toggleButton = document.getElementById('theme-toggle');
 const body = document.body;
 
@@ -5,7 +15,7 @@ toggleButton.addEventListener('click', () => {
     body.classList.toggle('dark');
 });
 
-// ---- Card interactions: achievement preview (lightbox) and project redirect ----
+// Card interactions: achievement preview (lightbox) and project redirect
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxClose = document.getElementById('lightbox-close');
