@@ -25,9 +25,21 @@
       <section id="projects">
          <h2>Previous Projects</h2>
          <div class="cards">
-            <article class="card project-card" data-href="https://github.com/AlyssaArgoncillo/Relief_Request_System.git">
+            <article class="card project-card"
+                     data-repo="https://github.com/AlyssaArgoncillo/Relief_Request_System.git"
+                     data-desc="Prototype for managing and tracking relief requests using a flatfile database."
+                     data-langs="Java">
                <img src="images/RRMS-Preview.png" alt="Relief Request System Prototype" class="card-img">
                <div class="card-label">Relief Request System Prototype</div>
+            </article>
+
+            <article class="card project-card"
+                     data-repo="https://github.com/AlyssaArgoncillo/green-sense.git"
+                     data-site="https://alyssaargoncillo.github.io/green-sense/"
+                     data-desc="GreenSense is a web app landing page for Web Programming Case Study 2, M1FA2."
+                     data-langs="HTML, CSS, JavaScript">
+               <img src="images/GreenSense-Preview.png" alt="GreenSense Preview" class="card-img">
+               <div class="card-label">GreenSense</div>
             </article>
          </div>
       </section>
@@ -36,6 +48,29 @@
          <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
             <button id="lightbox-close" class="lightbox-close" aria-label="Close preview">× </button>
             <img id="lightbox-img" src="" alt="Preview" />
+         </div>
+      </div>
+      <!-- Project detail panel -->
+      <div id="project-panel" class="project-panel" aria-hidden="true">
+         <div class="project-backdrop" id="project-backdrop"></div>
+         <div class="project-panel-content" role="dialog" aria-modal="true" aria-label="Project details">
+            <button id="project-close" class="project-close" aria-label="Close project details">×</button>
+            <div class="project-panel-scroll">
+               <div class="project-header">
+                  <h3 id="project-title">Project Title</h3>
+               </div>
+               <div class="project-body">
+                  <img id="project-img" src="" alt="Project preview" />
+                  <div class="project-info">
+                     <p id="project-desc"></p>
+                     <p id="project-langs" class="project-langs"></p>
+                  </div>
+               </div>
+               <div class="project-panel-actions" id="project-actions">
+                  <a id="project-repo" class="action-btn" href="#" target="_blank" rel="noopener">See Repository</a>
+                  <a id="project-site" class="action-btn" href="#" target="_blank" rel="noopener" style="display:none;">See Website</a>
+               </div>
+            </div>
          </div>
       </div>
       <script src="script.js"></script>
