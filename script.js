@@ -71,3 +71,28 @@ if (discordBtn && discordTooltip) {
         }
     });
 }
+
+// Mobile skill icon tooltip handler
+if (window.matchMedia('(max-width: 800px)').matches) {
+    const iconBoxes = document.querySelectorAll('.icon-box');
+    iconBoxes.forEach(iconBox => {
+        iconBox.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Remove tooltip from all other icons
+            iconBoxes.forEach(box => {
+                if (box !== iconBox) {
+                    box.classList.remove('show-tooltip');
+                }
+            });
+            // Toggle tooltip on clicked icon
+            iconBox.classList.toggle('show-tooltip');
+        });
+    });
+    
+    // Close tooltip when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.icon-box')) {
+            iconBoxes.forEach(box => box.classList.remove('show-tooltip'));
+        }
+    });
+}

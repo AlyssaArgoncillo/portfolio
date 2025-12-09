@@ -142,12 +142,12 @@ body.dark .hero { background-image: url("images/Banners/ArgonTech Hero Banner Li
 	.hero { align-items: flex-start; padding-top: 84px; padding-bottom: 0; min-height: auto; }
 	.hero-visual { order:2; margin-left:0; align-self:center; margin-top:8px; }
 	.hero-copy { order:1; text-align:center; padding-left:0; }
-	.hero-ctas { justify-content: center; margin-bottom:6px; }
+	.hero-ctas { justify-content: center; margin-bottom:6px; flex-direction: column; align-items: center; }
 	#hero-profile-img { width:220px; height:300px; margin:6px auto 0; display:block; }
 	.nav-links { display:none; }
 
 	.site-container { padding-top: 8px; padding-left: 14px; padding-right: 14px; }
-	.hero-inner { padding-top: 12px; padding-bottom: 0; }
+	.hero-inner { padding-top: 12px; padding-bottom: 0; padding-left: 24px; padding-right: 24px; }
 }
 
 /* Container for page content (keeps hero full-bleed while other sections are padded) */
@@ -336,6 +336,7 @@ body.dark .skill-column h3 {
 	justify-content: center;
 	box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	position: relative;
 }
 
 .icon-box:hover {
@@ -387,6 +388,47 @@ body.dark .skill-column h3 {
 	.icon-box img {
 		width: 50px;
 		height: 50px;
+	}
+	
+	.icon-box::after {
+		content: attr(title);
+		position: absolute;
+		bottom: 110%;
+		left: 50%;
+		transform: translateX(-50%) scale(0);
+		background: #2B2D42;
+		color: #EDF2F4;
+		padding: 8px 12px;
+		border-radius: 6px;
+		font-size: 12px;
+		white-space: nowrap;
+		opacity: 0;
+		transition: all 0.2s ease;
+		pointer-events: none;
+		z-index: 100;
+	}
+	
+	.icon-box::before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 50%;
+		transform: translateX(-50%);
+		border: 6px solid transparent;
+		border-top-color: #2B2D42;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		pointer-events: none;
+		z-index: 100;
+	}
+	
+	.icon-box.show-tooltip::after {
+		transform: translateX(-50%) scale(1);
+		opacity: 1;
+	}
+	
+	.icon-box.show-tooltip::before {
+		opacity: 1;
 	}
 }
 
