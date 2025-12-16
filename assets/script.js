@@ -35,8 +35,8 @@ toggleButton.addEventListener('click', () => {
 
 // Swap nav logo when theme changes
 const navLogo = document.querySelector('.nav-logo');
-const logoLight = 'images/ArgonTech logo/ArgonTech Light Colored Transparent.png';
-const logoDark = 'images/ArgonTech logo/ArgonTech Dark Colored Transparent.png';
+const logoLight = 'assets/images/ArgonTech logo/ArgonTech Light Colored Transparent.png';
+const logoDark = 'assets/images/ArgonTech logo/ArgonTech Dark Colored Transparent.png';
 if (navLogo) {
     // set initial logo based on current theme
     navLogo.src = body.classList.contains('dark') ? logoLight : logoDark;
