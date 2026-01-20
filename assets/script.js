@@ -88,7 +88,7 @@ if (window.matchMedia('(max-width: 800px)').matches) {
             iconBox.classList.toggle('show-tooltip');
         });
     });
-    
+        
     // Close tooltip when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.icon-box')) {
